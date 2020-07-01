@@ -12,3 +12,10 @@ def update_calculated_inventory_item(calculated_inventory_item_uuid,header,paylo
     else:
         print(f'{calculated_inventory_item_uuid} Update Failed')
         return False
+    
+def get_calulated_inventory_item(calculated_inventory_item_uuid,header):
+    url = f'{BASE_URL}/v2/admin/calculated-inventory-items/{calculated_inventory_item_uuid}'
+    
+    response = requests.get(url,headers=header)
+    response.raise_for_status()
+    return response.json()

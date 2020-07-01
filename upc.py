@@ -15,4 +15,9 @@ def update_upc(upcId,header,payload):
         print(f'{upcId} Update Failed')
         return False
 
-    
+def get_upc(upcId,header):
+    url = f'{BASE_URL}/v2/super-admin/upcs/{upcId}'
+
+    response = requests.get(url,headers=header)
+    response.raise_for_status()
+    return response.json()

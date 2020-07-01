@@ -14,3 +14,11 @@ def update_inventory_item(inventory_item_uuid,header,payload):
     else:
         print(f'{inventory_item_uuid} Update Failed')
         return False
+
+def get_inventory_item(inventory_item_uuid,header):
+    url = f'{BASE_URL}/v2/admin/inventory-items/{inventory_item_uuid}'
+
+    response = requests.get(url,headers=header)
+
+    response.raise_for_status()
+    return response.json()
