@@ -7,3 +7,4 @@ email = johndoe@gmail.com
 password = test123
 ```
 The `config.ini` file will be used by `tokens.py` to get access tokens that will included in the API request headers so that the calls will work
+3. To set up your access tokens run `python3 tokens.py` from the command line (Only needs to be run once)

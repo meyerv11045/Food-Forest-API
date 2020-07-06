@@ -43,4 +43,6 @@ def read_token():
         return parser.get(section,'access')
     else:
         raise Exception(f'{section} not found in {CONFIG_FILE}')
-    
+
+if __name__ == '__main__':
+    write_new_token()
