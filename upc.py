@@ -6,7 +6,7 @@ def update_upc(upcId,header,payload):
 
     response = requests.patch(url,headers=header,data=payload)
 
-    response.raise_for_status()
+    #response.raise_for_status()
 
     if response.status_code == 200:
         print(f'{upcId} Updated')
@@ -19,5 +19,5 @@ def get_upc(upcId,header):
     url = f'{BASE_URL}/v2/super-admin/upcs/{upcId}'
 
     response = requests.get(url,headers=header)
-    response.raise_for_status()
+    #response.raise_for_status()    
     return response.json()

@@ -6,7 +6,7 @@ def update_inventory_item(inventory_item_uuid,header,payload):
     
     response = requests.patch(url,headers=header,data=payload)
     
-    response.raise_for_status()
+    #response.raise_for_status()
 
     if response.status_code == 200:
         print(f'{inventory_item_uuid} Updated')
@@ -20,5 +20,5 @@ def get_inventory_item(inventory_item_uuid,header):
 
     response = requests.get(url,headers=header)
 
-    response.raise_for_status()
+    #response.raise_for_status()
     return response.json()

@@ -6,6 +6,8 @@ def update_calculated_inventory_item(calculated_inventory_item_uuid,header,paylo
 
     response = requests.patch(url,headers=header,data=payload)
 
+    response.raise_for_status()
+
     if response.status_code == 200:
         print(f'{calculated_inventory_item_uuid} Updated')
         return True
